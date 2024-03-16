@@ -29,3 +29,9 @@ pnpm add react-router-dom
 #### 使用useRoutes
 
 #### createBrowserRouter/createHashRouter
+
+#### 动态路由/嵌套路由
+
+- basename
+- Outlet
+- children

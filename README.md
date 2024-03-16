@@ -16,3 +16,10 @@ pnpm add react-router-dom
     </Routes>
   </BrowserRouter>s
 ```
+
+### 路由跳转的几种方法
+
+1. <NavLink to="/url"/>
+2. <Link to= "/url"/>
+3. <Navigate to="/url"/> 重定向
+4. useNavigate() hooks跳转

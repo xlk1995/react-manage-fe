@@ -23,3 +23,7 @@ pnpm add react-router-dom
 2. <Link to= "/url"/>
 3. <Navigate to="/url"/> 重定向
 4. useNavigate() hooks跳转
+
+### api方式创建路由
+
+#### 使用useRoutes

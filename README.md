@@ -27,3 +27,5 @@ pnpm add react-router-dom
 ### api方式创建路由
 
 #### 使用useRoutes
+
+#### createBrowserRouter/createHashRouter

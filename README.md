@@ -1,42 +1,25 @@
-# a general background system
+## 项目目录结构
 
-## 安装
+- api
+- assets
+- components
+- layout
+- hooks
+- config
+- views
+- utils
+
+## 新建项目路由
+
+使用createHashRouter
+
+## tsconfig配置src路径
 
 ```
-pnpm add react-router-dom
+"baseUrl": "./",
+"paths": {
+	"@/*": ["src/*"]
+}
 ```
 
-## 使用
-
-```
-  <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<App />}></Route>
-      <Route path='/test' element={<Test />}></Route>
-    </Routes>
-  </BrowserRouter>s
-```
-
-### 路由跳转的几种方法
-
-1. <NavLink to="/url"/>
-2. <Link to= "/url"/>
-3. <Navigate to="/url"/> 重定向
-4. useNavigate() hooks跳转
-
-### api方式创建路由
-
-#### 使用useRoutes
-
-#### createBrowserRouter/createHashRouter
-
-#### 动态路由/嵌套路由
-
-- basename
-- Outlet
-- children
-
-### 数据api
-
-- useLoaderData
-- useActionData
+## 使用antd配置页面

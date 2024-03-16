@@ -35,3 +35,8 @@ pnpm add react-router-dom
 - basename
 - Outlet
 - children
+
+### 数据api
+
+- useLoaderData
+- useActionData

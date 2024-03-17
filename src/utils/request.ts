@@ -5,8 +5,11 @@ import {
   hideLoading
 } from '@/components/loading'
 
+import cfg from '@/config'
+console.log(cfg)
+
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URL,
+  baseURL: cfg.BASE_URL,
   timeout: 8000,
   timeoutErrorMessage: '请求超时, 请稍后重试'
 })
@@ -16,8 +19,10 @@ const instance = axios.create({
 instance.interceptors.request.use(
   config => {
     showLoading()
-    if (import.meta.env.VITE_MOCK === 'true') {
-      config.baseURL = import.meta.env.VITE_MOCK_URL
+    console.log(config.baseURL, '-----')
+
+    if (cfg.MOCK) {
+      config.baseURL = cfg.BASE_URL
     }
     const token = localStorage.getItem('token')
     if (token) {

@@ -56,3 +56,9 @@ interface ImportMeta {
 ```
 
 缺点：要是我们想在开发环境调试生产环境的东西，需要改地址
+
+## 运行时环境变量
+
+```
+ const env: ENV = document.documentElement.dataset.env as ENV
+```

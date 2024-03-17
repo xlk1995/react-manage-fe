@@ -62,3 +62,7 @@ interface ImportMeta {
 ```
  const env: ENV = document.documentElement.dataset.env as ENV
 ```
+
+## 封装两个工具函数
+
+钱，时间

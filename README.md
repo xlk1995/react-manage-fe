@@ -29,3 +29,5 @@ pnpm add antd
 ```
 
 ## 封装axios
+
+添加类型

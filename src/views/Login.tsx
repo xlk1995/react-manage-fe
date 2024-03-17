@@ -4,12 +4,7 @@ import { useEffect } from 'react'
 const Login = () => {
   useEffect(() => {
     request
-      .get('xxx', { a: 'hahaha' })
-      .then(res => console.log(res, 'ttt'))
-      .catch(error => console.log(error))
-
-    request
-      .get('xxx', { a: 'hahaha' })
+      .get<string>('xxx', { a: 'hahaha' })
       .then(res => console.log(res, 'ttt'))
       .catch(error => console.log(error))
   }, [])

@@ -1,4 +1,9 @@
 import axios from 'axios'
+import { message } from 'antd'
+import {
+  showLoading,
+  hideLoading
+} from '@/components/loading'
 
 const instance = axios.create({
   baseURL: '/api',
@@ -10,6 +15,7 @@ const instance = axios.create({
 
 instance.interceptors.request.use(
   config => {
+    showLoading()
     const token = localStorage.getItem('token')
     if (token) {
       // add token
@@ -18,6 +24,7 @@ instance.interceptors.request.use(
     return { ...config }
   },
   error => {
+    hideLoading()
     return Promise.reject(error)
   }
 )
@@ -25,22 +32,20 @@ instance.interceptors.request.use(
 // 响应拦截器
 instance.interceptors.response.use(
   response => {
-    console.log(response, '======')
     const data = response.data
-    console.log(data, '666')
-
     if (data.code === 500001) {
       // logout
       localStorage.removeItem('token')
       location.href = '/'
     } else if (data.code === 0) {
+      message.error(data.msg)
       return Promise.reject(data.msg)
     }
-    console.log(data.data, '555')
-
+    hideLoading()
     return data.data
   },
   error => {
+    hideLoading()
     return Promise.reject(error)
   }
 )

@@ -7,6 +7,11 @@ const Login = () => {
       .get('xxx', { a: 'hahaha' })
       .then(res => console.log(res, 'ttt'))
       .catch(error => console.log(error))
+
+    request
+      .get('xxx', { a: 'hahaha' })
+      .then(res => console.log(res, 'ttt'))
+      .catch(error => console.log(error))
   }, [])
   return <div>Login</div>
 }

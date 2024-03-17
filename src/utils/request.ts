@@ -6,7 +6,7 @@ import {
 } from '@/components/loading'
 
 const instance = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_BASE_URL,
   timeout: 8000,
   timeoutErrorMessage: '请求超时, 请稍后重试'
 })
@@ -16,6 +16,9 @@ const instance = axios.create({
 instance.interceptors.request.use(
   config => {
     showLoading()
+    if (import.meta.env.VITE_MOCK === 'true') {
+      config.baseURL = import.meta.env.VITE_MOCK_URL
+    }
     const token = localStorage.getItem('token')
     if (token) {
       // add token

@@ -1,5 +1,5 @@
 import {
-  createHashRouter,
+  createBrowserRouter,
   Navigate
 } from 'react-router-dom'
 import type { RouteObject } from 'react-router-dom'
@@ -31,4 +31,4 @@ const routers: RouteObject[] = [
   }
 ]
 
-export default createHashRouter(routers)
+export default createBrowserRouter(routers)

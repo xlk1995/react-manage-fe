@@ -1,0 +1,30 @@
+@mixin bfc {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.login-wrapper {
+  @include bfc;
+  background-image: url(/login_bg.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .login_form {
+    width: 400px;
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    // background-color: #fff;
+    background-image: linear-gradient(
+      120deg,
+      #a1c4fd 0%,
+      #c2e9fb 100%
+    );
+    opacity: 0.9;
+
+    padding: 50px;
+    border-radius: 10px;
+  }
+}

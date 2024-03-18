@@ -1,4 +1,4 @@
-import './login.scss'
+import styles from './login.module.scss'
 import { Form, Button, FormProps, Input } from 'antd'
 type FieldType = {
   username?: string
@@ -11,8 +11,8 @@ const onFinish: FormProps<FieldType>['onFinish'] =
   }
 const Login = () => {
   return (
-    <div className='login-wrapper'>
-      <div className='login_form'>
+    <div className={styles['login-wrapper']}>
+      <div className={styles['login_form']}>
         <Form
           name='basic'
           onFinish={onFinish}
